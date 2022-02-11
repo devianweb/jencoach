@@ -1,11 +1,18 @@
 import "./LoginPage.css";
 import React from "react";
-import bigLogo from "../resources/jc-big-logo.png";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { signUser } from "../server/users";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const handleClick = () => {};
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    signUser("ian@duskwood.design", "password").then(() => {
+      navigate("/home");
+    });
+  };
 
   return (
     <div className="loginContainer">
