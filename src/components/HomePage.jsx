@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const HomePage = () => {
+  const [form, setForm] = useState([]);
+
   return <div>HomePage</div>;
 };
 
